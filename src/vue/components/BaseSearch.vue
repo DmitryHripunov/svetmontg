@@ -1,15 +1,153 @@
 <template>
   <div class="search-top js-search-menu">
     <div class="container">
-      <form class="search-top__form">
-        <input class="search-top__input" type="text" />
+      <form class="search-top__form" method="GET">
+        <vue-simple-suggest
+          v-model="phrase"
+          :list="suggestionList"
+          @select="onSuggestSelect"
+          :max-suggestions="4"
+          :debounce="200"
+          :min-length="3"
+          ref="suggest"
+        >
 
-        <button class="search-top__btn">найти</button>
+          <div class="search-top__wrapper">
+            <template slot="misc-item-above" slot-scope='scope'>
+              <div class="search-top__wrapper">
+                <div class="search-top__preloader" v-if="isLoading"></div>
+
+                <div
+                  class="
+                    autocomplete-search__item
+                    vue-search__label search-top__label_danger
+                  "
+                  v-else-if="error"
+                >
+                  {{ error }}
+                </div>
+                <div
+                  class="autocomplete-search__item search-top__label"
+                  v-else-if="count === 0"
+                >
+                  Ничего не найдено :(
+                </div>
+              </div>
+            </template>
+
+            <input
+              class="search-top__input"
+              type="search" 
+              placeholder="Поиск по каталогу"
+              autocomplete="off" 
+              :is-visible="true"
+              ref="input" 
+            />
+
+            <button
+              type="submit"
+              class="search-top__btn btn btn_medium btn_primary"
+            >
+              найти
+            </button>
+
+          </div>
+
+          <div slot="suggestion-item" slot-scope="scope">
+            <a
+              :href="scope.suggestion.href || '#'"
+              v-html="boldenSuggestion(scope)"
+              class="autocomplete-search__item"
+            >
+            </a>
+          </div>
+
+          <div slot="misc-item-below" slot-scope="scope">
+            <div class="search-top__bottom" v-if="!isLoading && count > 0">
+              <a :href="pathShowAll" class="search-top__link">
+                Все результаты ({{ count }})
+              </a>
+            </div>
+          </div>
+        </vue-simple-suggest>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import VueSimpleSuggest from "vue-simple-suggest";
+// import axios from 'axios';
+
+export default {
+  components: {
+    VueSimpleSuggest,
+  },
+
+  props: {
+  //   urlAjax: {
+  //     type: String,
+  //     default: "/api/search/",
+  //   },
+  //   urlForm: {
+  //     type: String,
+  //     default: "/search/",
+  //   },
+    
+  },
+
+  data() {
+    return {
+      phrase: '',
+      isLoading: false,
+      count: null,
+      error: null,
+    };
+  },
+
+  watch: {
+    isVisible(val) {
+      if (val) {
+        this.$refs.input.focus();
+      }
+    },
+  },
+
+  computed: {
+    pathShowAll() {
+      return `${this.urlForm}?phrase=${this.phrase}`;
+    },
+  },
+
+  methods: {
+    suggestionList() {
+      fetch('https://gorest.co.in/public-api/products', { method: 'GET' })
+        .then(response => response.json())
+        .then(json => {
+          const data = json.data
+
+          for (let i = 0; i < data.length; i++) {
+            return data[i].name
+          }
+        }); 
+        
+    },
+    onSuggestSelect({ href }) {
+      window.location.href = href;
+    },
+    boldenSuggestion(scope) {
+      if (!scope) {
+        return scope;
+      }
+      const { suggestion, query } = scope;
+      const result = suggestion.title;
+      if (!query) return result;
+      const texts = query.split(/[\s-_/\\|.]/gm).filter((t) => !!t) || [""];
+      return result.replace(
+        new RegExp(`(.*?)(${texts.join("|")})(.*?)`, "gi"),
+        '$1<b class="highlight">$2</b>$3'
+      );
+    },
+  },
+};
 </script>

@@ -55,6 +55,9 @@
   &__mobile-link {
     display: inline-flex;
     margin-left: 32px;
+    &.is-active {
+      pointer-events: none;
+    }
   }
 }
 
@@ -62,7 +65,6 @@
   .header {
 
     &.is-moved {
-      // display: none;
       transform: translateY(-106px);
       transition: transform .3s ease-in-out;
     }

@@ -298,7 +298,7 @@
           </div>
 
           <div class="projects__action">
-            <a href="#" class="btn btn_brand">
+            <a href="#" class="btn btn_brand btn_large">
               Все проекты
 
               <svg class="icon btn__icon icon_color_darkest icon_size_m">

@@ -1,0 +1,95 @@
+<template>
+  <section class="projects">
+    <div class="page-section page-section_mt">
+      <div class="container">
+        <h2 class="title title_section">Реализованные проекты</h2>
+
+        <div class="swiper-container projects__swiper">
+          <div class="swiper-wrapper projects__list">
+            <div class="swiper-slide projects__item">
+              <a class="projects__link" href="projects__link">
+                <img
+                  class="projects__img"
+                  src="../../static/img/project-1.jpg"
+                  alt="#"
+                />
+
+                <div class="projects__item-content">
+                  <h3 class="projects__item-title">Автосалон «KIA»</h3>
+                  <span class="projects__item-footnote">Пенза</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="swiper-slide projects__item">
+              <a class="projects__link" href="projects__link">
+                <img
+                  class="projects__img"
+                  src="../../static/img/project-2.jpg"
+                  alt="#"
+                />
+
+                <div class="projects__item-content">
+                  <h3 class="projects__item-title">
+                    Дворец культуры “Дом офицеров”
+                  </h3>
+                  <span class="projects__item-footnote">Пенза</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="swiper-slide projects__item">
+              <a class="projects__link" href="projects__link">
+                <img
+                  class="projects__img"
+                  src="../../static/img/project-3.jpg"
+                  alt="#"
+                />
+
+                <div class="projects__item-content">
+                  <h3 class="projects__item-title">Центр дзюдо «Батыр»</h3>
+                  <span class="projects__item-footnote">Казань</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="swiper-slide projects__item">
+              <a class="projects__link" href="projects__link">
+                <img
+                  class="projects__img"
+                  src="../../static/img/project-4.jpg"
+                  alt="#"
+                />
+
+                <div class="projects__item-content">
+                  <h3 class="projects__item-title">
+                    Производственная компания «Флекси»
+                  </h3>
+                  <span class="projects__item-footnote">Пенза</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="pagination">
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="projects__action">
+          <a href="#" class="btn btn_brand btn_large">
+            Все проекты
+
+            <svg class="icon btn__icon icon_color_darkest icon_size_m">
+              <use xlink:href="#link-arrow"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {};
+</script>

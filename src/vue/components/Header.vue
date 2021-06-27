@@ -66,7 +66,7 @@
           </ol>
         </address>
 
-        <a href="tel:+78412235015" class="header__mobile-link">
+        <a class="header__mobile-link js-search-top-toggle">
           <svg class="icon icon_color_shade icon_size_m">
             <use xlink:href="#search"></use>
           </svg>
@@ -84,13 +84,13 @@
       <div class="container header__menu">
         <div class="nav__list">
           <div class="nav__item">
-            <span class="nav__link">
+            <a class="nav__link">
               каталог
 
               <svg class="nav__svg icon icon_color_darkest icon_size_s">
                 <use xlink:href="#arrow"></use>
               </svg>
-            </span>
+            </a>
 
             <ul class="nav__dropdown">
               <li class="nav__dropdown-item">
@@ -161,23 +161,75 @@
           </div>
 
           <div class="nav__item">
-            <a href="#" class="nav__link"> услуги</a>
+            <a class="nav__link">
+              услуги
+              <svg class="nav__svg icon icon_color_darkest icon_size_s">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </a>
+
+            <ul class="nav__dropdown ">
+              <li class="nav__dropdown-item">
+                <a href="#" class="nav__dropdown-link">Проектирование</a>
+              </li>
+
+              <li class="nav__dropdown-item">
+                <a href="#" class="nav__dropdown-link">Лизинг оборудования</a>
+              </li>
+
+              <li class="nav__dropdown-item">
+                <a href="#" class="nav__dropdown-link"
+                  >Энергосервисный контракт</a
+                >
+              </li>
+
+              <li class="nav__dropdown-item">
+                <a href="#" class="nav__dropdown-link"
+                  >Сервисное обслуживание</a
+                >
+              </li>
+
+              <li class="nav__dropdown-item">
+                <a href="#" class="nav__dropdown-link"
+                  >Постгарантийный ремонт</a
+                >
+              </li>
+            </ul>
           </div>
 
           <div class="nav__item">
-            <a href="#" class="nav__link">наши проекты</a>
+            <a class="nav__link">наши проекты</a>
           </div>
 
           <div class="nav__item">
-            <a href="#" class="nav__link is-active">бонусная программа</a>
+            <a class="nav__link is-active">бонусная программа</a>
           </div>
 
           <div class="nav__item">
-            <a href="#" class="nav__link"> о нас </a>
+            <a class="nav__link">
+              о нас
+              <svg class="nav__svg icon icon_color_darkest icon_size_s">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </a>
+
+            <ul class="nav__dropdown nav__dropdown_column">
+              <li class="nav__dropdown-item">
+                <a href="#" class="nav__dropdown-link">О компании</a>
+              </li>
+
+              <li class="nav__dropdown-item">
+                <a href="#" class="nav__dropdown-link">Вакансии</a>
+              </li>
+
+              <li class="nav__dropdown-item">
+                <a href="#" class="nav__dropdown-link">Контактная информация</a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <button class="nav__search-btn js-search-toggle">
+        <button class="nav__search-btn js-search-top-toggle">
           <svg class="icon icon_color_shade icon_size_m">
             <use xlink:href="#search"></use>
           </svg>
@@ -185,7 +237,7 @@
       </div>
     </nav>
 
-    <BaseSearch></BaseSearch>
+    <BaseSearch ></BaseSearch>
   </header>
 </template>
 

@@ -1,34 +1,22 @@
-const toggle = document.querySelector('.js-burger-btn');
-const content = document.querySelector('.js-nav');
+import show from '../helpers/show';
+import hide from '../helpers/hide';
+
+const burgerBtn = document.querySelector('.js-burger-btn');
+const navContent = document.querySelector('.js-nav');
 const bodyEl = document.body;
 
-const show = () => {
-  toggle.setAttribute('aria-expanded', true);
-  content.setAttribute('aria-hidden', false);
+if (burgerBtn) {
+  burgerBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
 
-  bodyEl.classList.add('no-scrolling');
-  toggle.classList.add('is-active');
-  content.classList.add('is-opened');
-};
+    // eslint-disable-next-line no-unused-expressions
+    JSON.parse(burgerBtn.getAttribute('aria-expanded')) ? hide(burgerBtn, navContent, bodyEl) : show(burgerBtn, navContent, bodyEl);
+  });
 
-const hide = () => {
-  toggle.setAttribute('aria-expanded', false);
-  content.setAttribute('aria-hidden', true);
+  const handleClosure = event =>
+    !navContent.contains(event.target) && hide(burgerBtn, navContent, bodyEl);
 
-  bodyEl.classList.remove('no-scrolling');
-  toggle.classList.remove('is-active');
-  content.classList.remove('is-opened');
-};
-
-toggle.addEventListener('click', (event) => {
-  event.stopPropagation();
-
-  // eslint-disable-next-line no-unused-expressions
-  JSON.parse(toggle.getAttribute('aria-expanded')) ? hide() : show();
-});
-
-const handleClosure = event => !content.contains(event.target) && hide();
-
-window.addEventListener('click', handleClosure);
-window.addEventListener('focusin', handleClosure);
+  window.addEventListener('click', handleClosure);
+  window.addEventListener('focusin', handleClosure);
+}
 
