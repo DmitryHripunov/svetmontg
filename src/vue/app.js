@@ -5,6 +5,5 @@ import App from './App.vue';
 /* eslint-disable no-new */
 new Vue({
   router,
-  el: '#vue-app',
   render: h => h(App),
-});
+}).$mount('#vue-app');

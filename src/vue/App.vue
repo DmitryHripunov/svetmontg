@@ -1,8 +1,10 @@
 <template>
   <div>
     <Header />
-
-    <router-view />
+    
+    <main class="main">
+      <router-view />
+    </main>
 
     <Footer />
   </div>

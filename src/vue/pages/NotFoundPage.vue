@@ -7,10 +7,6 @@
               <div class="quote__img-block"></div>
 
               <div class="quote__text-block">
-                <h2 class="quote__title">
-                  «Не бойся теней —они означают, что рядом горит свет»
-                </h2>
-
                 <p class="quote__desc">
                   Страница не найдена
                 </p>

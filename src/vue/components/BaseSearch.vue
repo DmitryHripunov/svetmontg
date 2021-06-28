@@ -3,32 +3,21 @@
     <div class="container">
       <form class="search-top__form" method="GET">
         <vue-simple-suggest
-          v-model="phrase"
+          v-model="chosen"
           :list="suggestionList"
           @select="onSuggestSelect"
           :max-suggestions="4"
           :debounce="200"
           :min-length="3"
           ref="suggest"
+          :filter-by-query="true"
         >
-
           <div class="search-top__wrapper">
-            <template slot="misc-item-above" slot-scope='scope'>
+            <template slot="misc-item-above" slot-scope="scope">
               <div class="search-top__wrapper">
-                <div class="search-top__preloader" v-if="isLoading"></div>
-
-                <div
-                  class="
-                    autocomplete-search__item
-                    vue-search__label search-top__label_danger
-                  "
-                  v-else-if="error"
-                >
-                  {{ error }}
-                </div>
                 <div
                   class="autocomplete-search__item search-top__label"
-                  v-else-if="count === 0"
+                  v-if="count === 0"
                 >
                   Ничего не найдено :(
                 </div>
@@ -37,11 +26,11 @@
 
             <input
               class="search-top__input"
-              type="search" 
+              type="search"
               placeholder="Поиск по каталогу"
-              autocomplete="off" 
+              autocomplete="off"
               :is-visible="true"
-              ref="input" 
+              ref="input"
             />
 
             <button
@@ -50,20 +39,18 @@
             >
               найти
             </button>
-
           </div>
 
-          <div slot="suggestion-item" slot-scope="scope">
+          <div class="search-top__bottom containr" slot="suggestion-item" slot-scope="scope">
             <a
               :href="scope.suggestion.href || '#'"
-              v-html="boldenSuggestion(scope)"
               class="autocomplete-search__item"
             >
             </a>
           </div>
 
           <div slot="misc-item-below" slot-scope="scope">
-            <div class="search-top__bottom" v-if="!isLoading && count > 0">
+            <div class="search-top__bottom" v-if="count > 0">
               <a :href="pathShowAll" class="search-top__link">
                 Все результаты ({{ count }})
               </a>
@@ -77,7 +64,7 @@
 
 <script>
 import VueSimpleSuggest from "vue-simple-suggest";
-// import axios from 'axios';
+import axios from "axios";
 
 export default {
   components: {
@@ -85,24 +72,30 @@ export default {
   },
 
   props: {
-  //   urlAjax: {
-  //     type: String,
-  //     default: "/api/search/",
-  //   },
-  //   urlForm: {
-  //     type: String,
-  //     default: "/search/",
-  //   },
-    
+    //   urlAjax: {
+    //     type: String,
+    //     default: "/api/search/",
+    //   },
+    //   urlForm: {
+    //     type: String,
+    //     default: "/search/",
+    //   },
   },
 
   data() {
     return {
       phrase: '',
+      chosen: '',
       isLoading: false,
-      count: null,
+      count: '',
       error: null,
     };
+  },
+
+  computed: {
+    getUri() {
+      return (this.uri = uri);
+    },
   },
 
   watch: {
@@ -115,22 +108,22 @@ export default {
 
   computed: {
     pathShowAll() {
-      return `${this.urlForm}?phrase=${this.phrase}`;
+      return `?phrase=${this.phrase}`;
     },
   },
 
   methods: {
     suggestionList() {
-      fetch('https://gorest.co.in/public-api/products', { method: 'GET' })
-        .then(response => response.json())
-        .then(json => {
-          const data = json.data
-
-          for (let i = 0; i < data.length; i++) {
-            return data[i].name
+     axios
+        .get("https://gorest.co.in/public-api/products")
+        .then((response) => {
+          const resultData = response.data.data;
+          for (let i in resultData) {
+            console.log(resultData[i].name);
+            this.count = resultData[i].id
+            resultData[i].name;
           }
-        }); 
-        
+        });
     },
     onSuggestSelect({ href }) {
       window.location.href = href;
@@ -140,7 +133,7 @@ export default {
         return scope;
       }
       const { suggestion, query } = scope;
-      const result = suggestion.title;
+      const result = suggestion.data.data[0].name;
       if (!query) return result;
       const texts = query.split(/[\s-_/\\|.]/gm).filter((t) => !!t) || [""];
       return result.replace(

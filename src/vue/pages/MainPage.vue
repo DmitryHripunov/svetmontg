@@ -500,6 +500,6 @@
 import HeroSwiper from '../components/HeroSwiper.vue';
 
 export default {
-  components: { HeroSwiper, }
+  components: { HeroSwiper, },
 };
 </script>
