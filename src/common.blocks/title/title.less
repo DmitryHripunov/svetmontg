@@ -24,6 +24,25 @@
     line-height: 32px;
   }
 
+  &_page {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 24px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: 120px;
+      background-color: @color-brand;
+    }
+  }
+
   &_section {
     position: relative;
     display: inline-block;
@@ -49,6 +68,11 @@
     &_main {
       font-size: 45px;
       line-height: 1.5;
+    }
+
+    &_page {
+      font-size: 36px;
+      line-height: 48px;
     }
 
     &_section {

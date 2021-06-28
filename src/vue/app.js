@@ -1,9 +1,12 @@
 import Vue from 'vue';
-import router from './router';
-import App from './App.vue';
+import BaseSearch from './components/BaseSearch.vue';
+// import router from './router';
+// import App from './App.vue';
 
 /* eslint-disable no-new */
 new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#vue-app');
+  el: '#vue-search',
+  components: {
+    BaseSearch,
+  },
+});

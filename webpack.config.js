@@ -110,7 +110,7 @@ module.exports = {
     },
 
     {
-      test: /\.(png|jpe?g|gif)$/,
+      test: /\.(png|jpe?g|gif|webp)$/,
       loaders: [{
         loader: 'file-loader',
         options: {
@@ -233,8 +233,10 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      // chunksSortMode: 'manual',
-      // chunks: ['vendor', 'common'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/catalog.html',
+      filename: 'catalog.html',
     }),
     // для добавления отдельной html страницы нужно подключить новый HtmlWebpackPlugin
     /* new HtmlWebpackPlugin({
@@ -242,7 +244,7 @@ module.exports = {
       filename: 'test.html',
       // chunksSortMode: 'manual',
       // chunks: ['vendor', 'common'],
-    }), */
+      }), */
   ],
 };
 

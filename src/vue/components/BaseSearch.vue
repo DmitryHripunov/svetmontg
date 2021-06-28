@@ -115,11 +115,10 @@ export default {
   methods: {
     suggestionList() {
      axios
-        .get("https://gorest.co.in/public-api/products")
+        .get('https://gorest.co.in/public-api/products')
         .then((response) => {
           const resultData = response.data.data;
           for (let i in resultData) {
-            console.log(resultData[i].name);
             this.count = resultData[i].id
             resultData[i].name;
           }

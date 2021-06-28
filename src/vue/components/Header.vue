@@ -252,26 +252,5 @@ export default {
       searchOpen: false,
     };
   },
-
-  // methods: {
-  //   toggleSearch() {
-  //     this.searchOpen = !this.searchOpen;
-  //   },
-
-  //   clickOutside() {
-  //     document.addEventListener('click', (event) => {
-  //       if (
-  //         this.searchOpen &&
-  //         !event.target.closest('.js-search-container')
-  //       ) {
-  //         this.searchOpen = false;
-  //       }
-  //     });
-  //   },
-  // },
-
-  // created() {
-  //   this.clickOutside();
-  // },
 };
 </script>

@@ -1,12 +1,14 @@
 @import (reference) '../../less/variables.less';
 
-.pagination.swiper-pagination {
-  margin-top: 24px;
-  text-align: right;
-  right: 16px;
-  left: 16px;
-  display: flex;
-  justify-content: center;
+.pagination {
+  .swiper-pagination {
+    margin-top: 24px;
+    text-align: right;
+    right: 16px;
+    left: 16px;
+    display: flex;
+    justify-content: center;
+  }
   
   .swiper-pagination-bullet {
     flex-basis: 50%;
@@ -25,12 +27,14 @@
 }
 
 @media(min-width: @laptop) {
-  .pagination.swiper-pagination {
-    bottom: 170px;
-    right: 16vw;
-    left: 16vw;
-    justify-content: flex-end;
-    margin-top: 0;
+  .pagination {
+    .swiper-pagination {
+      bottom: 170px;
+      right: 16vw;
+      left: 16vw;
+      justify-content: flex-end;
+      margin-top: 0;
+    }
 
     .swiper-pagination-bullet {
       display: inline-block;

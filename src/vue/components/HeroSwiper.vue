@@ -23,9 +23,9 @@
         <div class="hero__wrapper">
           <div class="hero__content">
             <div class="title title_white title_main hero__title">
-              {{ slide.name }}
-              <span class="title__colored">{{ slide.price }}</span>
-              {{ slide.id }}
+              {{ slide.titleBefore }}
+              <span class="title__colored">{{ slide.titleColored }}</span>
+              {{ slide.titleAfter }}
             </div>
 
             <router-link
@@ -62,8 +62,28 @@
 </template>
 
 <script>
-import axios from "axios";
-import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
+
+const heroBanners = [
+  {
+    image: '/img/main_banner.jpg',
+    titleBefore: 'Подчёркиваем',
+    titleColored: 'уникальность',
+    titleAfter: 'зданий днём и ночью',
+  },
+  {
+    image: '/img/main_banner_2.webp',
+    titleBefore: 'Подчёркиваем',
+    titleColored: 'уникальность',
+    titleAfter: 'ночью',
+  },
+
+  {
+    image: '/img/main_banner.jpg',
+    titleBefore: 'Text',
+    titleColored: 'home',
+  },
+]
 
 export default {
   components: {
@@ -97,27 +117,30 @@ export default {
     swiper() {
       return this.$refs.heroSwiper.$swiper;
     },
+    getProducts() {
+      return this.products = heroBanners;
+    }
   },
 
-  methods: {
-    getPageData() {
-      this.productsLoading = true;
-      clearTimeout(this.loadProductTimer);
-      this.loadProductTimer = setTimeout(() => {
-        axios
-          .get("https://gorest.co.in/public-api/products")
-          .then((response) => {
-            this.products = response.data.data;
-          })
-          .then(() => {
-            this.productsLoading = false;
-          });
-      }, this.loadProductTimer);
-    },
-  },
+  // methods: {
+  //   getPageData() {
+  //     this.productsLoading = true;
+  //     clearTimeout(this.loadProductTimer);
+  //     this.loadProductTimer = setTimeout(() => {
+  //       axios
+  //         .get("https://gorest.co.in/public-api/products")
+  //         .then((response) => {
+  //           this.products = response.data.data;
+  //         })
+  //         .then(() => {
+  //           this.productsLoading = false;
+  //         });
+  //     }, this.loadProductTimer);
+  //   },
+  // },
 
-  created() {
-    this.getPageData();
-  },
+  // created() {
+  //   this.getPageData();
+  // },
 };
 </script>
