@@ -35,7 +35,7 @@
 
             <button
               type="submit"
-              class="search-top__btn btn btn_medium btn_primary"
+              class="search-top__btn btn btn_medium btn_brand"
             >
               найти
             </button>

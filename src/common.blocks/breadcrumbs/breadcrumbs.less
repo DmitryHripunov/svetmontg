@@ -19,24 +19,31 @@
     font-size: 13px;
     font-weight: 500;
     line-height: normal;
-  }
-  
-  &__link:not(.is-active) {
     color: @color-hover;
+  }
+}
 
-    &::before {
-      position: absolute;
-      content: "";
-      top: 7px;
-      right: -16px;
-      transform: rotate(90deg);
-      border-style: solid;
-      border-width: 0 4px 6px;
-      border-color: transparent transparent #0d0d0d;
+@media (min-width: @laptop) {
+  .breadcrumbs {
+    &__link.is-active {
+      color: @text-canvas;
     }
 
-    &:hover {
-      text-decoration: underline;
-    }
-  } 
+    &__link:not(.is-active) {
+      &::before {
+        position: absolute;
+        content: "";
+        top: 7px;
+        right: -16px;
+        transform: rotate(90deg);
+        border-style: solid;
+        border-width: 0 4px 6px;
+        border-color: transparent transparent #0d0d0d;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    } 
+  }
 }
