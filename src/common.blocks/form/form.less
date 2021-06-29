@@ -3,7 +3,27 @@
 .form {
 
   &__input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 36px;
+    font: 400 14px "Manrope";
+    color: @text-gray;
+    border: 1px solid @color-white-dim;
+    border-radius: 4px;
 
+    &:focus {
+      outline: none;
+    }
+
+    &_tel {
+      background:  url(img/tel.svg) left 12px center / 16px no-repeat,
+        @color-white;
+    }
+
+    &_name {
+      background: url(img/user.svg) left 12px center / 16px no-repeat, 
+        @color-white;
+    }
   }
 }
 
