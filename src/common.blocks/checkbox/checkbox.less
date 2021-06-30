@@ -1,0 +1,103 @@
+@import (reference) '../../less/variables.less';
+
+.checkbox {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__label:not(:last-child) {
+    margin-bottom: 14px;
+  }
+
+  &__svg {
+    fill: @color-white;
+    display: none;
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 7px;
+  }
+
+  &__svg_static {
+    top: 8px;
+    transform: none;
+  }
+
+  &__text {
+    position: relative;
+    padding-left: 23px;
+    font-weight: 500;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 5px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+      border: solid 2px @text-canvas;
+      transition: border-color @transition;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 8px;
+      left: 5px;
+      width: 4px;
+      height: 6px;
+      transform: rotate(225deg);
+      border-top: 2px solid @color-primary-light;
+      border-left: 2px solid @color-primary-light;
+      opacity: 0;
+      transition: opacity @transition;
+    }
+  }
+
+  &__label input:checked 
+  +  &__text::after { 
+    border-color: @color-primary-light;
+    // background-color: @color-blue;
+  }
+
+  &__label input:checked 
+  +  &__text::before { 
+    opacity: 1;
+  }
+
+  &__text_static,
+  &__label_static {
+    position: static;
+  }
+
+  &__text_static {
+
+    &::after {
+      top: 0;
+      transform: none;
+    }
+  }
+
+}
+
+@media (min-width: @laptop) {
+  .checkbox {
+    font-size: 13px;
+  }
+}

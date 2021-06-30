@@ -1,0 +1,74 @@
+@import (reference) "../../less/variables.less";
+
+.range-slider {
+  .noUi-handle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: @color-primary-light;
+    box-shadow: none;
+    cursor: pointer;
+    right: -14px;
+    top: -7px;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  .noUi-connects {
+    background: @color-white-dim;
+  }
+
+  .noUi-connect {
+    background: @color-primary-light;
+  }
+
+  .noUi-target {
+    border: none;
+    box-shadow: none;
+    height: 2px;
+    width: 97%;
+  }
+
+  &__range {
+    margin-bottom: 16px;
+  }
+
+   &__input-frame {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__input-wrap {
+    display: flex;
+    padding: 8px 14px;
+    border: 2px solid @color-white-dim;
+    border-radius: 4px;
+    max-width: 48%;
+  }
+
+  &__input {
+    max-width: 60px;
+    width: 100%;
+    font: 400 13px "Manrope";
+    color: @text-gray;
+    border: none;
+    padding: 0 4px;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+      display: none;
+    }
+  }
+
+  &__caption {
+    color: @text-gray;
+    font-size: 13px;
+    font-weight: 400;
+  }
+}

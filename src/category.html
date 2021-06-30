@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>теплосветмонтаж</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  ${require('./common.blocks/header/header.html')}
+
+  <main class="main main_indent-top">
+    <div class="no-scrolling__overlay"></div>
+
+    ${require('./common.blocks/breadcrumbs/breadcrumbs.html')}
+
+    <section class="page-section page-section_inner">
+      <div class="category-item">
+        <div class="container">
+          <h1 class="title title_page">Наружное освещение</h1>
+
+          <div class="category-item__hashtag">
+            <div class="hashtag">
+              <ul class="hashtag__list">
+                <li class="hashtag__item">
+                  <a class="hashtag__link">уличные светильники</a>
+                </li>
+                <li class="hashtag__item">
+                  <a class="hashtag__link">магистральные светильники</a>
+                </li>
+                <li class="hashtag__item">
+                  <a class="hashtag__link">архитектурные светильники</a>
+                </li>
+                <li class="hashtag__item">
+                  <a class="hashtag__link">Прожекторы</a>
+                </li>
+                <li class="hashtag__item">
+                  <a class="hashtag__link">парковые светильники</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <button class="category-item__btn js-open-filter">
+            <svg class="icon category-item__svg icon_color_darkest icon_size_sm">
+              <use xlink:href="#filter"></use>
+            </svg>
+            Подбор по параметрам
+          </button>
+
+          <div class="category-item__wrapper">
+            <div class="category-item__filter">
+              <div class="filter-product">
+                <form action="#" class="form">
+                  <ul class="filter-product__list">
+                    <li class="filter-product__item">
+                      <div class="filter-product__title">Цена</div>
+
+                      <div class="range-slider js-range-slider">
+                        <div class="range-slider__range">
+                          <div class="range-control"></div>
+                        </div>
+
+                        <div class="range-slider__input-frame">
+                          <div class="range-slider__input-wrap">
+                            <span class="range-slider__caption">от</span>
+
+                            <input autocomplete="off" type="number" value="100"
+                              class="range-slider__input range-input-0" data-price-min="100"
+                              data-price-current-min="100">
+
+                            <span class="range-slider__caption">₽</span>
+                          </div>
+
+                          <div class="range-slider__input-wrap">
+                            <span class="range-slider__caption">до</span>
+
+                            <input autocomplete="off" type="number" value="120000"
+                              class="range-slider__input range-input-1" data-price-max="120000"
+                              data-price-current-max="120000">
+
+                            <span class="range-slider__caption">₽</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="filter-product__item">
+                      <div class="filter-product__title">Цветовая температура</div>
+
+                      <div class="checkbox">
+                        <label class="checkbox__label">
+                          <input type="checkbox" class="checkbox__input">
+
+                          <span class="checkbox__text ">2700K</span>
+                        </label>
+
+                        <label class="checkbox__label">
+                          <input type="checkbox" class="checkbox__input">
+
+                          <span class="checkbox__text ">4000K</span>
+                        </label>
+
+                        <label class="checkbox__label">
+                          <input type="checkbox" class="checkbox__input">
+
+                          <span class="checkbox__text ">6400K</span>
+                        </label>
+                      </div>
+                    </li>
+
+                    <li class="filter-product__item">
+                      <div class="filter-product__title">Цветовая температура</div>
+
+                      <div class="checkbox">
+                        <label class="checkbox__label">
+                          <input type="checkbox" class="checkbox__input">
+
+                          <span class="checkbox__text ">2700K</span>
+                        </label>
+
+                        <label class="checkbox__label">
+                          <input type="checkbox" class="checkbox__input">
+
+                          <span class="checkbox__text ">700–1000 Лм</span>
+                        </label>
+
+                        <label class="checkbox__label">
+                          <input type="checkbox" class="checkbox__input">
+
+                          <span class="checkbox__text ">1000–2000 Лм</span>
+                        </label>
+
+                        <label class="checkbox__label">
+                          <input type="checkbox" class="checkbox__input">
+
+                          <span class="checkbox__text ">2000–5000 Лм</span>
+                        </label>
+
+                        <label class="checkbox__label">
+                          <input type="checkbox" class="checkbox__input">
+
+                          <span class="checkbox__text ">5000–10000 Лм</span>
+                        </label>
+
+                        <label class="checkbox__label">
+                          <input type="checkbox" class="checkbox__input">
+
+                          <span class="checkbox__text ">10000+ Лм</span>
+                        </label>
+                      </div>
+                    </li>
+
+                    <li class="filter-product__item">
+                      <button type="submit" class="btn btn_primary btn_medium">
+                        показать отобранные (1124)
+                      </button>
+                    </li>
+                  </ul>
+
+                </form>
+                <button class="close-btn js-close-filter">
+                  <svg class="icon icon_size_sm icon_color_darkest">
+                    <use xlink:href="#close_btn"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="category-item__product">
+              <div class="page-spread">
+                <ul class="page-spread__list">
+                  <li class="page-spread__item">
+                    ${require('./common.blocks/card/card.html')}
+                  </li>
+                  <li class="page-spread__item">
+                    ${require('./common.blocks/card/card.html')}
+                  </li>
+                  <li class="page-spread__item">
+                    ${require('./common.blocks/card/card.html')}
+                  </li>
+                  <li class="page-spread__item">
+                    ${require('./common.blocks/card/card.html')}
+                  </li>
+                  <li class="page-spread__item">
+                    ${require('./common.blocks/card/card.html')}
+                  </li>
+                  <li class="page-spread__item">
+                    ${require('./common.blocks/card/card.html')}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  ${require('./common.blocks/footer/footer.html')}
+</body>
+
+</html>

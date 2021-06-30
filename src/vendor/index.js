@@ -65,4 +65,7 @@ require("expose-loader?Swiper!swiper/dist/js/swiper.js");
 require('normalize.css/normalize.css');
 
 // simplebar
-require('simplebar/dist/simplebar.css')
+require('simplebar/dist/simplebar.css');
+
+// nouislider
+require('nouislider/distribute/nouislider.css');
