@@ -1,0 +1,141 @@
+@import (reference) '../../less/variables.less';
+
+.product-info {
+  &__group:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  &__price-wrapper {
+    padding: 16px 8px 16px 16px;
+    background: @color-white-light;
+    display: inline-block;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &__price,
+  &__course {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  &__price-footnote,
+  &__props-name {
+    display: block;
+    color: @text-gray;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  &__props {
+  }
+
+   &__props-item {
+     display: flex;
+   }
+
+  &__props-item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &__props-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+
+  &__props-spec {
+    font-weight: 600;
+  }
+
+  &__certificates-list {
+    display: flex;
+    overflow-y: auto;
+  }
+
+  &__certificates-item:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  &__certificates-gallery {
+    display: block;
+  }
+
+  &__certificates-img {
+    width: 70px;
+    height: 100px;
+  }
+
+  &__doc-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+
+  &__doc-link {
+    display: inline-flex;
+    align-items: center;
+    color: @color-hover;
+    font-weight: 400;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__doc-link:not(:last-child) {
+    margin-right: 24px;
+  }
+}
+
+@media (min-width: @laptop) {
+  .product-info {
+    &__price-wrapper {
+      
+    }
+
+    &__group:not(:last-child) {
+      margin-bottom: 48px;
+    }
+
+    &__title {
+      margin-bottom: 24px;
+    }
+
+    &__props {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__props-item:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    &__props-icon {
+      width: 48px;
+      height: 48px;
+      margin-right: 20px;
+    }
+
+    &__certificates-item:not(:last-child) {
+      margin-right: 32px;
+    }
+
+    &__doc-icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 16px;
+    }
+
+    &__doc-link:not(:last-child) {
+      margin-right: 56px;
+    }
+  }
+}

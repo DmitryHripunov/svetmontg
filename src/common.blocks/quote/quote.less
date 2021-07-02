@@ -13,6 +13,12 @@
 		}
 	}
 
+	&__wrapper-link {
+		display: flex;
+		justify-content: center;
+		height: 100%;
+	}
+
   &__link {
     margin-top: 24px;
   }
@@ -24,6 +30,7 @@
 
 	&__swiper-container {
 		padding-bottom: 24px;
+		margin-bottom: 24px;
 	}
 
 	&__item {
@@ -84,6 +91,10 @@
 			}
 		}
 
+		&__swiper-container {
+			margin-bottom: 0;
+		}
+
 		&__text-block {
 			max-width: 545px;
 			width: 100%;
@@ -93,6 +104,10 @@
 			font-size: 36px;
 			line-height: 48px;
 			margin-bottom: 24px;
+		}
+
+		&__wrapper-link {
+			justify-content: flex-end;
 		}
 
 		&__desc:not(.quote__desc_black) {

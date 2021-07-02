@@ -2,7 +2,7 @@ import show from '../helpers/show';
 import hide from '../helpers/hide';
 
 const filterBtn = document.querySelector('.js-open-filter');
-const filterContent = document.querySelector('.category-item__filter');
+const filterContent = document.querySelector('.category-page__filter');
 const closePopupEl = document.querySelector('.js-close-filter');
 const bodyEl = document.body;
 
