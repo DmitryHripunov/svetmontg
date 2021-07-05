@@ -1,0 +1,30 @@
+@import (reference) '../../less/variables.less';
+
+.page-bg {
+	&_desc-bg {
+		padding-bottom: 40px;
+	}
+
+	&__desc {
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 24px;
+    color: @text-white;
+    margin-top: 24px;
+	}
+}
+
+@media (min-width: @laptop) {
+	.page-bg {
+    &_desc-bg {
+		  padding-bottom: 160px;
+	  }
+
+		&__desc {
+			font-weight: 800;
+			font-size: 22px;
+			line-height: 32px;
+      margin-top: 48px;
+		}
+	}
+}

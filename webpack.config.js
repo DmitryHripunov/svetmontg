@@ -246,6 +246,10 @@ module.exports = {
       template: 'src/product.html',
       filename: 'product.html',
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/services.html',
+      filename: 'services.html',
+    }),
     // для добавления отдельной html страницы нужно подключить новый HtmlWebpackPlugin
     /* new HtmlWebpackPlugin({
       template: 'src/test.html',

@@ -1,0 +1,135 @@
+@import (reference) '../../less/variables.less';
+
+.tabs {
+	&__overflow {
+		overflow-x: auto;
+	}
+
+	&__list {
+		display: flex;
+		margin-bottom: 24px;
+	}
+
+	&__item:not(:last-child) {
+		margin-right: 8px;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		padding: 8px;
+		min-width: 270px;
+		width: 100%;
+		border: 2px solid transparent;
+		box-shadow: 0.5px 3px 10px rgba(1, 46, 59, 0.1);
+		border-radius: 4px;
+		transition: border-color @transition;
+
+		&:hover {
+			border-color: @color-primary-light;
+		}
+
+		&.is-active {
+			border-color: @color-primary-light;
+		}
+	}
+
+	&__content {
+		visibility: hidden;
+		opacity: 0;
+		overflow: hidden;
+		height: 0;
+		position: absolute;
+		z-index: -100;
+		transition: opacity 0.3s ease-in-out;
+
+		&.is-active {
+			visibility: visible;
+			overflow: auto;
+			height: 100%;
+			opacity: 1;
+			position: static;
+		}
+	}
+
+	&__thumb-img {
+		width: 72px;
+		height: 72px;
+		margin-right: 8px;
+	}
+
+	&__img-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 24px;
+		height: auto;
+	}
+
+	&__img {
+		object-fit: contain;
+	}
+
+	&__content-title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 24px;
+		margin-bottom: 16px;
+	}
+
+	&__content-desc {
+		font-weight: 500;
+	}
+
+	&__content-desc:not(:last-child) {
+		margin-bottom: 16px;
+	}
+}
+
+@media (min-width: @laptop) {
+	.tabs {
+		&__container {
+			display: flex;
+			flex-direction: row-reverse;
+		}
+
+		&__overflow {
+			overflow-x: visible;
+		}
+
+		&__list {
+			margin-bottom: 0;
+			flex-direction: column;
+			flex: 1 0 270px;
+			margin-left: 32px;
+		}
+
+		&__item:not(:last-child) {
+			margin-right: 0;
+			margin-bottom: 8px;
+			max-width: 100px;
+		}
+
+		&__content {
+			flex: auto;
+			display: flex;
+			align-items: flex-start;
+			max-width: 100%;
+		}
+
+		&__img-container {
+			flex: 1 0 auto;
+			margin-right: 32px;
+		}
+
+		&__content-title {
+			font-size: 26px;
+			line-height: 32px;
+			margin-bottom: 32px;
+		}
+
+		&__content-desc:not(:last-child) {
+			margin-bottom: 32px;
+		}
+	}
+}

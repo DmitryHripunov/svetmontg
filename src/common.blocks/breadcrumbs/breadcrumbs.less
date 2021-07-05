@@ -20,6 +20,10 @@
     font-weight: 500;
     line-height: normal;
     color: @color-hover;
+
+    &_white {
+      color: @text-white;
+    }
   }
 }
 
@@ -29,6 +33,16 @@
       color: @text-canvas;
     }
 
+    &__link_white {
+      color: @text-white;
+      opacity: 1;
+    }
+
+    &__link_white.is-active {
+      color: @text-white;
+      opacity: .6;
+    }
+    
     &__link:not(.is-active) {
       &::before {
         position: absolute;
@@ -43,6 +57,12 @@
 
       &:hover {
         text-decoration: underline;
+      }
+    } 
+
+    &__link_white:not(.is-active) {
+      &::before {
+        border-color: transparent transparent #fff;
       }
     } 
   }
