@@ -250,6 +250,10 @@ module.exports = {
       template: 'src/services.html',
       filename: 'services.html',
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/projects.html',
+      filename: 'projects.html',
+    }),
     // для добавления отдельной html страницы нужно подключить новый HtmlWebpackPlugin
     /* new HtmlWebpackPlugin({
       template: 'src/test.html',

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>теплосветмонтаж</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  ${require('./common.blocks/header/header.html')}
+
+  <main class="main main_indent-top">
+    <div class="no-scrolling__overlay"></div>
+
+    <div class="page-section page-section_inner">
+      <div class="page-bg page-bg_single-title" style="background: linear-gradient(
+                                99.37deg,
+                                rgba(0, 0, 0, 0.57) 0%,
+                                rgba(0, 0, 0, 0.31) 100%
+                              ),
+                              url('${require('./static/img/bg.jpg')}') center/cover">
+  
+        <div class="container">
+  
+          <div class="hidden-mobile">
+            <nav class="breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                  <a href="/" class="breadcrumbs__link breadcrumbs__link_white">last page</a>
+                </li>
+  
+                <li class="breadcrumbs__item hidden-mobile">
+                  <a class="breadcrumbs__link breadcrumbs__link_white is-active ">current page</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+  
+          <h1 class="title title_page title_white title_mb0">Наши проекты</h1>
+        </div>
+      </div>
+  
+      <div class="projects-page">
+        <div class="container">
+          <div class="page-section page-section_margin">
+            <form class="projects-page__form">
+              <label class="projects-page__label">
+                ГОРод
+  
+                <select name="cities" class="projects-page__select">
+                  <option>Все</option>
+                  <option value="0">Пенза</option>
+                  <option value="1">Чебурашка</option>
+                  <option value="2">Крокодил Гена</option>
+                </select>
+              </label>
+  
+              <label class="projects-page__label">
+                область применения
+  
+                <select name="scope" class="projects-page__select">
+                  <option>Все</option>
+                  <option value="0">Пенза</option>
+                  <option value="1">Чебурашка</option>
+                  <option value="2">Крокодил Гена</option>
+                </select>
+              </label>
+  
+              <button type="reset" class="projects-page__reset">Сбросить</button>
+            </form>
+          </div>
+  
+          <div class="page-section page-section_margin">
+            <div class="quote">
+              <ul class="quote__list quote__list_mb">
+                <li class="quote__item">
+                  <div class="quote__wrapper">
+                    <div class="quote__img-block quote__img-block_large">
+                      <a class="projects-page__link" href="#">
+                        <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                        <div class="projects-page__item-content">
+                          <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                          <span class="projects-page__item-footnote">
+                            <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                              <use xlink:href="#map"></use>
+                            </svg>
+  
+                            Пенза
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+  
+                    <div class="spread">
+                      <div class="spread__item">
+                        <a class="projects-page__link" href="#">
+                          <img class="projects-page__img" src="/img/project-2.jpg" alt="#">
+  
+                          <div class="projects-page__item-content">
+                            <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                            <span class="projects-page__item-footnote">
+                              <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                                <use xlink:href="#map"></use>
+                              </svg>
+  
+                              Пенза
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+  
+                      <div class="spread__item">
+                        <a class="projects-page__link" href="#">
+                          <img class="projects-page__img" src="/img/project-3.jpg" alt="#">
+  
+                          <div class="projects-page__item-content">
+                            <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                            <span class="projects-page__item-footnote">
+                              <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                                <use xlink:href="#map"></use>
+                              </svg>
+  
+                              Пенза
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+  
+              <ul class="quote__list">
+                <li class="quote__item">
+                  <div class="quote__wrapper">
+                    <div class="spread spread_grid">
+                      <div class="spread__item">
+                        <a class="projects-page__link" href="#">
+                          <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                          <div class="projects-page__item-content">
+                            <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                            <span class="projects-page__item-footnote">
+                              <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                                <use xlink:href="#map"></use>
+                              </svg>
+  
+                              Пенза
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+  
+                      <div class="spread__item">
+                        <a class="projects-page__link" href="#">
+                          <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                          <div class="projects-page__item-content">
+                            <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                            <span class="projects-page__item-footnote">
+                              <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                                <use xlink:href="#map"></use>
+                              </svg>
+  
+                              Пенза
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+  
+                      <div class="spread__item">
+                        <a class="projects-page__link" href="#">
+                          <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                          <div class="projects-page__item-content">
+                            <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                            <span class="projects-page__item-footnote">
+                              <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                                <use xlink:href="#map"></use>
+                              </svg>
+  
+                              Пенза
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+  
+                      <div class="spread__item">
+                        <a class="projects-page__link" href="#">
+                          <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                          <div class="projects-page__item-content">
+                            <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                            <span class="projects-page__item-footnote">
+                              <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                                <use xlink:href="#map"></use>
+                              </svg>
+  
+                              Пенза
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+  
+                    <div class="quote__text-block">
+                      <p class="quote__desc quote__desc_img quote__desc_black">
+                        Это настолько восхитительно, что никто не может поверить, что это светодиодное освещение....
+                      </p>
+  
+                      <a class="btn btn_small btn_primary quote__link quote__link_ml" href="#">
+                        подробнее
+                      </a>
+                    </div>
+                  </div>
+                </li>
+  
+                <li class="quote__item">
+                  <div class="quote__wrapper">
+                    <div class="quote__img-block quote__img-block_large">
+                      <a class="projects-page__link" href="#">
+                        <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                        <div class="projects-page__item-content">
+                          <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                          <span class="projects-page__item-footnote">
+                            <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                              <use xlink:href="#map"></use>
+                            </svg>
+  
+                            Пенза
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+  
+                    <div class="quote__text-block">
+                      <p class="quote__desc quote__desc_img quote__desc_black">
+                        Это настолько восхитительно, что никто не может поверить, что это светодиодное освещение....
+                      </p>
+  
+                      <a class="btn btn_small btn_primary quote__link quote__link_ml" href="#">
+                        подробнее
+                      </a>
+                    </div>
+                  </div>
+                </li>
+  
+                <li class="quote__item">
+                  <div class="quote__wrapper">
+                    <div class="quote__img-block quote__img-block_large">
+                      <a class="projects-page__link" href="#">
+                        <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                        <div class="projects-page__item-content">
+                          <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                          <span class="projects-page__item-footnote">
+                            <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                              <use xlink:href="#map"></use>
+                            </svg>
+  
+                            Пенза
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+  
+                    <div class="quote__text-block">
+                      <p class="quote__desc quote__desc_img quote__desc_black">
+                        Это настолько восхитительно, что никто не может поверить, что это светодиодное освещение....
+                      </p>
+  
+                      <a class="btn btn_small btn_primary quote__link quote__link_ml" href="#">
+                        подробнее
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="page-section page-section_margin">
+            <div class="projects-page__footer">
+              <ul class="projects-page__footer-list">
+                <li class="projects-page__footer-item">
+                  <a class="projects-page__link" href="#">
+                    <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                    <div class="projects-page__item-content">
+                      <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                      <span class="projects-page__item-footnote">
+                        <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                          <use xlink:href="#map"></use>
+                        </svg>
+  
+                        Пенза
+                      </span>
+                    </div>
+                  </a>
+                </li>
+  
+                <li class="projects-page__footer-item">
+                  <a class="projects-page__link" href="#">
+                    <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                    <div class="projects-page__item-content">
+                      <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                      <span class="projects-page__item-footnote">
+                        <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                          <use xlink:href="#map"></use>
+                        </svg>
+  
+                        Пенза
+                      </span>
+                    </div>
+                  </a>
+                </li>
+  
+                <li class="projects-page__footer-item">
+                  <a class="projects-page__link" href="#">
+                    <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                    <div class="projects-page__item-content">
+                      <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                      <span class="projects-page__item-footnote">
+                        <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                          <use xlink:href="#map"></use>
+                        </svg>
+  
+                        Пенза
+                      </span>
+                    </div>
+                  </a>
+                </li>
+  
+                <li class="projects-page__footer-item">
+                  <a class="projects-page__link" href="#">
+                    <img class="projects-page__img" src="/img/project-1.jpg" alt="#">
+  
+                    <div class="projects-page__item-content">
+                      <h3 class="projects-page__item-title">Автосалон «KIA»</h3>
+                      <span class="projects-page__item-footnote">
+                        <svg class="icon icon_size_m icon_color_white projects-page__svg">
+                          <use xlink:href="#map"></use>
+                        </svg>
+  
+                        Пенза
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+  
+            <div class="pagination-page">
+              <ul class="pagination-page__list">
+                <li class="pagination-page__item">
+                  <a href="#" class="pagination-page__link">
+                    1
+                  </a>
+                </li>
+                <li class="pagination-page__item">
+                  <a href="#" class="pagination-page__link is-active">
+                    2
+                  </a>
+                </li>
+                <li class="pagination-page__item">
+                  <a href="#" class="pagination-page__link">
+                    3
+                  </a>
+                </li>
+                <li class="pagination-page__item">
+                  <a href="#" class="pagination-page__link">
+                    4
+                  </a>
+                </li>
+                <li class="pagination-page__item">
+                  <a href="#" class="pagination-page__link">
+                    5
+                  </a>
+                </li>
+                <li class="pagination-page__item">
+                  <a href="#" class="pagination-page__link">
+                    6
+                  </a>
+                </li>
+                <li class="pagination-page__item">
+                  <a href="#" class="pagination-page__link">
+                    7
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  ${require('./common.blocks/footer/footer.html')}
+</body>
+
+</html>

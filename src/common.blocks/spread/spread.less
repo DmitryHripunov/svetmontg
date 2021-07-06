@@ -1,0 +1,54 @@
+@import (reference) '../../less/variables.less';
+
+.spread {
+	height: 100%;
+	flex: 1 0 auto;
+
+	&_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+    margin-bottom: 40px;
+
+    .spread__item:not(:last-child) {
+		  margin-bottom: 0;
+	  }
+	}
+
+	&__item:not(:last-child) {
+		margin-bottom: 24px;
+	}
+
+	&__item {
+		position: relative;
+		height: 200px;
+	}
+}
+
+@media (min-width: @laptop) {
+	.spread {
+		&_grid {
+			display: grid;
+			grid-template-columns: [one-start three-start] 1fr 1fr;
+			grid-gap: 30px;
+      margin-bottom: 0;
+      height: 510px;
+      flex: 0 1 auto;
+      max-width: 770px;
+      width: 100%;
+      margin-right: 56px;
+
+			.spread__item:not(:last-child) {
+				margin-bottom: 0;
+			}
+		}
+
+		&__item:not(:last-child) {
+			margin-bottom: 32px;
+		}
+
+		&__item {
+			height: 240px;
+		}
+	}
+}

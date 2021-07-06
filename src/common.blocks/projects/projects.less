@@ -90,12 +90,23 @@
 		transition: transform @bezier;
 	}
 
-	&__item-title,
-	&__item-footnote {
+	&__item-title {
 		font-weight: 700;
 		font-size: 18px;
 		line-height: 24px;
 		color: @text-white;
+		margin-bottom: 10px;
+	}
+
+	&__item-footnote {
+		font-weight: 400;
+		color: @text-white;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	&__svg {
+		margin-right: 8px;
 	}
 
 	.swiper-pagination {
