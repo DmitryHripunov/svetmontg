@@ -1,0 +1,63 @@
+@import (reference) '../../less/variables.less';
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-gap: 8px;
+
+  .card__title {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .card__desc {
+    flex-wrap: wrap;
+  }
+
+  .card__desc-prop {
+    text-align: left;
+    font-weight: 800;
+  }
+
+  &_img {
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 0;
+
+    .section-grid__item {
+      width: 100%;
+      max-width: 545px;
+    }
+
+    .section-grid__item:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    .section-grid__img {
+      width: 100%;
+      height: 140px;
+    }
+  }
+
+}
+
+@media (min-width: @laptop) {
+  .section-grid {
+    grid-gap: 30px; 
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); 
+
+    .card__desc-prop {
+      text-align: right;
+      font-weight: 400;
+    }
+
+    &_img {
+      grid-gap: 0;
+
+      .section-grid__img {
+        height: 300px;
+      }
+    }
+  }
+}
