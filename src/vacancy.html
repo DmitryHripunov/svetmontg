@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>теплосветмонтаж</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  ${require('./common.blocks/header/header.html')}
+
+  <main class="main main_indent-top">
+    <div class="no-scrolling__overlay"></div>
+      <div class="page-bg page-bg_single-title" style="background: linear-gradient(
+                                99.37deg,
+                                rgba(0, 0, 0, 0.57) 0%,
+                                rgba(0, 0, 0, 0.31) 100%
+                              ),
+                              url('${require('./static/img/bg.jpg')}') center/cover">
+
+        <div class="container">
+          <div class="hidden-mobile">
+            <nav class="breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                  <a href="/" class="breadcrumbs__link breadcrumbs__link_white">last page</a>
+                </li>
+
+                <li class="breadcrumbs__item hidden-mobile">
+                  <a class="breadcrumbs__link breadcrumbs__link_white is-active ">current page</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <h1 class="title title_page title_white title_mb0">Наши вакансии</h1>
+        </div>
+      </div>
+
+    <div class="page-section page-section_indent-huge">
+      <div class="container">
+        <div class="vacancy">
+          <div class="vacancy__header">
+            <p class="vacancy__desc">
+              Активно развивающиеся страны третьего мира являются только методом политического участия и смешаны с не
+              уникальными
+              данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
+              Разнообразный и богатый
+              опыт говорит нам, что семантический разбор внешних противодействий.
+            </p>
+          </div>
+
+          <ul class="vacancy__list">
+            <li class="vacancy__item">
+              <h2 class="vacancy__title">
+                Системный аналитик
+              </h2>
+
+              <p class="vacancy__desc">
+                А ещё явные признаки победы институционализации призваны к ответу. И нет сомнений, что базовые сценарии
+                поведения
+                пользователей могут быть своевременно верифицированы. Но понимание сути ресурсосберегающих технологий
+                играет важную роль
+                в формировании существующих финансовых и административных.
+              </p>
+            </li>
+
+            <li class="vacancy__item">
+              <h2 class="vacancy__title">
+                Экспедитор
+              </h2>
+
+              <p class="vacancy__desc">
+                А ещё явные признаки победы институционализации призваны к ответу. И нет сомнений, что базовые сценарии
+                поведения
+                пользователей могут быть своевременно верифицированы.
+              </p>
+            </li>
+
+            <li class="vacancy__item">
+              <h2 class="vacancy__title">
+                Монтажник
+              </h2>
+
+              <p class="vacancy__desc">
+                А ещё явные признаки победы институционализации призваны к ответу. И нет сомнений, что базовые сценарии
+                поведения
+                пользователей могут быть своевременно верифицированы. Но понимание сути ресурсосберегающих технологий
+                играет важную роль
+                в формировании существующих финансовых и административных.
+              </p>
+            </li>
+          </ul>
+
+          <div class="vacancy__link-wrapper">
+            <!--  mailto с темой типа "Вакансия в вашей компании" -->
+            <a href="mailto:example.ru" class="btn btn_medium btn_primary location-text vacancy__link">
+              <svg class="icon icon_size_m icon_color_white location-text__svg">
+                <use xlink:href="#mail"></use>
+              </svg>
+  
+              Отправить резюме
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  ${require('./common.blocks/footer/footer.html')}
+</body>
+
+</html>

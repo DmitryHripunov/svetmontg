@@ -1,0 +1,29 @@
+@import (reference) '../../less/variables.less';
+
+.not-found {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&__logo {
+		margin-bottom: 24px;
+	}
+
+	&__text {
+		font-size: 18px;
+		line-height: 24px;
+    margin-bottom: 24px;
+	}
+}
+
+@media (min-width: @laptop) {
+	.not-found {
+		&__text {
+			font-size: 36px;
+			line-height: 48px;
+		}
+	}
+}

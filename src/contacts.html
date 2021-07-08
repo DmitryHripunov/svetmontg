@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>теплосветмонтаж</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  ${require('./common.blocks/header/header.html')}
+
+  <main class="main main_indent-top">
+    <div class="no-scrolling__overlay"></div>
+
+    <div class="page-bg page-bg_single-title" style="background: linear-gradient(
+                                99.37deg,
+                                rgba(0, 0, 0, 0.57) 0%,
+                                rgba(0, 0, 0, 0.31) 100%
+                              ),
+                              url('${require('./static/img/bg.jpg')}') center/cover">
+
+      <div class="container">
+        <div class="hidden-mobile">
+          <nav class="breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a href="/" class="breadcrumbs__link breadcrumbs__link_white">last page</a>
+              </li>
+
+              <li class="breadcrumbs__item hidden-mobile">
+                <a class="breadcrumbs__link breadcrumbs__link_white is-active ">current page</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <h1 class="title title_page title_white title_mb0">Контактная информация</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="contacts">
+        <div class="page-section page-section_margin">
+          <div class="contacts__header">
+            <div class="contacts__header-group">
+              <address class="address">
+                <div class="address__wrapper">
+                  <div class="address__img-wrapper">
+                    <img class="address__img" src="./static/img/step_2.jpg" alt="#">
+                  </div>
+
+                  <ul class="address__list">
+                    <li class="address__item">
+                      <div class="address__content">
+                        <svg class="address__svg icon icon_color_shade icon_size_m">
+                          <use xlink:href="#map"></use>
+                        </svg>
+
+                        г. Пенза, ул. Фабричная, 3
+                      </div>
+
+                      <div class="address__footnote">понедельник-пятница, 8:30-17:30</div>
+                    </li>
+
+                    <li class="address__item">
+                      <a href="tel:+78412235015" class="address__content">
+                        <svg class="address__svg icon icon_color_shade icon_size_m">
+                          <use xlink:href="#phone-desc"></use>
+                        </svg>
+
+                        +7 (8412) 23-50-15
+                      </a>
+                    </li>
+
+                    <li class="address__item">
+                      <a href="mailto:info@tsm58.ru" class="address__content">
+                        <svg class="address__svg icon icon_color_shade icon_size_m">
+                          <use xlink:href="#mail"></use>
+                        </svg>
+
+                        info@tsm58.ru
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </address>
+            </div>
+
+            <div class="contacts__header-group">
+              <div class="requisites">
+                <h3 class="requisites__title">Реквизиты</h3>
+
+                <p class="requisites__content">Общество с ограниченной ответственностью «ТСМ Лайтинг»</p>
+                <p class="requisites__content">ИНН 5837078876 <br> ОГРН 1205800009271</p>
+                <p class="requisites__content">Адрес местонахождения: 440004, Пензенская область, г. Пенза, ул.
+                  Фабричная, стр. 3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-section page-section_margin">
+          <div class="contacts__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2390.363667538325!2d45.03638641938024!3d53.19339382426789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414100f2f8a96d53%3A0x37a2c59e55b3979d!2z0KTQsNCx0YDQuNGH0L3QsNGPINGD0LsuLCAzLCDQn9C10L3Qt9CwLCDQn9C10L3Qt9C10L3RgdC60LDRjyDQvtCx0LsuLCA0NDAwMDc!5e0!3m2!1sru!2sru!4v1625745863650!5m2!1sru!2sru"
+              width="100%" height="400" style="border:0;" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="page-section page-section_margin">
+          <div class="section-grid">
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+            <div class="section-grid__item">
+              ${require('./common.blocks/worker/worker.html')}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  ${require('./common.blocks/footer/footer.html')}
+</body>
+
+</html>

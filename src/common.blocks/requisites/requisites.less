@@ -1,0 +1,26 @@
+@import (reference) '../../less/variables.less';
+
+.requisites {
+  background-color: @color-white-light;
+  padding: 8px;
+
+  &__title {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    font-weight: 400;
+  }
+
+  &__content:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+@media (min-width: @laptop) {
+  .requisites {
+    padding: 24px;
+  }
+}
+

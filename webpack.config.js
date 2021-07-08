@@ -262,6 +262,18 @@ module.exports = {
       template: 'src/about.html',
       filename: 'about.html',
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/vacancy.html',
+      filename: 'vacancy.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/contacts.html',
+      filename: 'contacts.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/404.html',
+      filename: '404.html',
+    }),
     // для добавления отдельной html страницы нужно подключить новый HtmlWebpackPlugin
     /* new HtmlWebpackPlugin({
       template: 'src/test.html',
