@@ -1,223 +1,230 @@
 @import (reference) '../../less/variables.less';
 
 .steps {
-  position: relative;
-  overflow: hidden;
-  padding: 170px 0 100px;
-  min-height: 800px;
-  display: none;
+	position: relative;
+	overflow: hidden;
+	padding: 120px 0 120px;
+	// min-height: 800px;
+	display: none;
 
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:radial-gradient(50% 511.47% at 50% 50%, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.74) 100%), 
-    url("../../static/img/steps_bg.jpg") center / 100% 100% no-repeat;
-    z-index: -1;
-  }
+	&::before {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: @text-canvas;
+		z-index: -1;
+	}
 
-  &__title {
-    margin-bottom: 96px;
-    font-weight: 700;
-    text-align: center;
-  }
+	&__title {
+		margin-bottom: 96px;
+		font-weight: 700;
+		text-align: center;
+	}
 
-  &__btn-list {
-    display: flex;
-    margin-bottom: 40px;
-  }
+	&__btn-list {
+		display: flex;
+		margin-bottom: 40px;
+	}
 
-  &__btn-item {
-    position: relative;
-    flex: 1 1 auto;
-    width: calc(100% / 6);
-    z-index: 1;
-    display: flex;
-    flex-direction: column-reverse;
+	&__tag {
+		text-align: center;
+		font-size: 12px;
+		color: @text-white;
+		margin-bottom: 24px;
+		transition: color @transition;
+	}
 
-    &::after {
-      position: absolute;
-      content: "";
-      bottom: 25%;
-      height: 2px;
+	&__btn {
+		position: relative;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 26px;
+		line-height: 32px;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		color: @text-white;
+		border-radius: 50%;
+		background: radial-gradient(50% 50% at 50% 50%, #fee3ad 0%, #fdb833 100%);
+		transition: transform @bezier, opacity @bezier;
+
+		&:after {
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: #f9b766;
+			mix-blend-mode: lighten;
+			opacity: 0;
+			filter: blur(12px);
+			transition: opacity @bezier;
+		}
+
+		&:hover {
+			transform: scale(1.5);
+		}
+
+		&:hover:after {
+			opacity: 1;
+		}
+	}
+
+	&__btn.is-active {
+		transform: scale(1.5);
+
+		&.is-active:after {
+			opacity: 1;
+		}
+	}
+
+	&__btn.is-active + .steps__tag {
+		color: @color-brand-l;
+	}
+
+	&__section {
+		visibility: hidden;
+		opacity: 0;
+		height: 0;
+		transition: opacity .4s ease-in-out;
+
+		&::after {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 50%;
+			height: 100%;
+			z-index: -1;
+		}
+	}
+
+	&__section.is-active {
+		visibility: visible;
+		height: auto;
+		opacity: 1;
+	}
+
+	&__section-title {
+		margin-bottom: 40px;
+		font-weight: 700;
+		text-align: left;
+	}
+
+	.step-one {
+		&::after {
+			background: url("../../static/img/step_1.jpg") left center / 100% no-repeat;
+		}
+	}
+
+	.step-two {
+		&::after {
+			background: url("../../static/img/step_2.jpg") left center / cover no-repeat;
+		}
+	}
+
+	.step-three {
+		&::after {
+			background: url("../../static/img/step_3.jpg") left center / cover no-repeat;
+		}
+	}
+
+	.step-four {
+		&::after {
+			background: url("../../static/img/step_4.jpg") left center / cover no-repeat;
+		}
+	}
+
+	.step-five {
+		&::after {
+			background: url("../../static/img/step_5.jpg") center center / cover no-repeat;
+		}
+	}
+
+	&__section-list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&__section-item {
+		position: relative;
+		color: @color-white;
+		font-weight: 600;
+		font-size: 18px;
+		padding-left: 24px;
+
+		&:before {
+			position: absolute;
+			content: '';
+			display: block;
+			background-color: @text-white;
+			width: 12px;
+			height: 2px;
+			left: 0;
+			top: 15px;
+		}
+	}
+
+	&__btn-item {
+		position: relative;
+		flex: 1 1 auto;
+		width: calc(100% / 6);
+		z-index: 1;
+		display: flex;
+		flex-direction: column-reverse;
+
+		&:first-child::after {
+			// width: 50%;
+			// right: 0;
+		}
+
+		&:last-child::after {
+			// width: 50%;
+			// left: 0;
+		}
+	}
+
+	&__btn-item:nth-child(3) {
+		transform: translateY(-55px);
+		position: relative;
+
+		&::after {
+			position: absolute;
+			content: "";
+			bottom: 0;
+			left: 50%;
+      transform: translateX(-50%);
       width: 100%;
-      background-color: rgba(255, 255, 255, 0.2);
-      z-index: -1;
-    }
+      height: 55px;
+      background: url("./img/line.png") center / cover no-repeat;
+			// height: 30px;
+			// width: 100%;
+			// border-top: 2px rgba(255, 255, 255, 0.2) solid;
+			// border-radius: 50%;
+			// z-index: -2;
+			// transform: matrix(-4, 0, 0, 2, 0, 35);
+		}
+	}
 
-    &:first-child::after {
-      width: 50%;
-      right: 0;
-    }
+	&__btn-item:nth-child(even) {
+		transform: translateY(-30px);
+	}
 
-    &:last-child::after {
-      width: 50%;
-      left: 0;
-    }
-  } 
-
-  &__tag {
-    text-align: center;
-    font-size: 12px;
-    color: @text-white;
-    margin-bottom: 24px;
-    transition: color @transition;
-  } 
-
-  &__btn {
-    position: relative;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    line-height: 32px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    color: @text-white;
-    border-radius: 50%;
-    background: radial-gradient(50% 50% at 50% 50%, #FEE3AD 0%, #FDB833 100%);
-    transition: transform @bezier, opacity @bezier;
-
-    &:after {
-      position: absolute;
-      content: "";
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background: #F9B766;
-      mix-blend-mode: lighten;
-      opacity: 0;
-      filter: blur(12px);
-      transition: opacity @bezier;
-    }
-
-    &:hover {
-      transform: scale(1.5);
-    }
-
-    &:hover:after {
-      opacity: 1;
-    }
-
-    &:hover + .steps__tag {
-      // color: @color-brand-l;
-    }
-  }
-
-  &__btn.is-active {
-    transform: scale(1.5);
-
-    &.is-active:after {
-      opacity: 1;
-    }
-  }
-
-  &__btn.is-active +.steps__tag  {
-    color: @color-brand-l;
-  }
-
-  &__section {
-    // display: none;
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
-    transition: opacity .4s ease-in-out;
-
-    &::after {
-      position: absolute;
-      content: "";
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 800px;
-      height: 110%;
-      border-radius: 50%;
-      opacity: .2;
-      z-index: -1;
-    }
-  }
-
-  &__section.is-active {
-    // display: block;
-    visibility: visible;
-    height: auto;
-    opacity: 1;
-  }
-
-  &__section-title {
-    margin-bottom: 40px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  &__section-subtitle {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-    text-align: center;
-    color: @color-white;
-    margin-bottom: 16px;
-  }
-
-  .step-one {
-    &::after {
-      background: url("../../static/img/step_1.jpg") center center / 100%;
-    }
-  }
-
-  .step-two {
-    &::after {
-      background: url("../../static/img/step_2.jpg") center center / 100%;
-    }
-  }
-
-  .step-three {
-    &::after {
-      background: url("../../static/img/step_3.jpg") center center / 100%;
-    }
-  }
-
-  .step-four {
-    &::after {
-      background: url("../../static/img/step_4.jpg") center center / 100%;
-    }
-  }
-
-  .step-five {
-    &::after {
-      background: url("../../static/img/step_5.jpg") center center / 100%;
-    }
-  }
-
-  &__section-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__section-item {
-    color: @color-white;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 24px;
-    text-align: center;
-    padding: 8px;
-    border: 1px solid @color-white;
-  }
-
-  &__section-item:not(:last-child) {
-    margin-right: 16px;
-  }
+	&__section-item:not(:last-child) {
+		margin-bottom: 16px;
+	}
 }
 
-@media(min-width: @desktop) {
-  .steps {
-    display: block;
-  }
+@media (min-width: @desktop) {
+	.steps {
+		display: block;
+	}
 }

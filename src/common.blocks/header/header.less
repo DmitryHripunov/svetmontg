@@ -18,8 +18,8 @@
 
 	&__logo {
 		display: block;
-		width: 140px;
-		height: 40px;
+		width: 45px;
+		height: 48px;
 		margin: 0 auto;
 	}
 
@@ -38,14 +38,39 @@
 		margin-left: auto;
 	}
 
-	&__address-list,
+	&__address,
 	&__nav {
 		font-size: 13px;
 		display: none;
 	}
 
 	&__address-item:first-child {
-		margin-right: 40px;
+		margin-bottom: 16px;
+	}
+
+	&__address-item {
+		position: relative;
+		padding-left: 54px;
+
+		&_phone::after {
+			position: absolute;
+			content: "";
+			top: 0;
+			left: 0;
+			width: 37px;
+			height: 37px;
+			background: url("./img/tel.png") center left / cover no-repeat;
+		}
+
+		&_mail::after {
+			position: absolute;
+			content: "";
+			top: -4px;
+			left: 0;
+			width: 37px;
+			height: 37px;
+			background: url("./img/mail.png") center left / cover no-repeat;
+		}
 	}
 
 	&__burger {
@@ -68,7 +93,7 @@
 		}
 
 		&.is-moved {
-			transform: translateY(-106px);
+			transform: translateY(-152px);
 			transition: transform .3s ease-in-out;
 		}
 
@@ -77,22 +102,34 @@
 		}
 
 		&__logo {
-			width: 200px;
-			height: 58px;
+			width: 100px;
+			height: 105px;
+		}
+
+		&__nav-top {
+			margin-right: 80px;
+		}
+
+		&__nav-label {
+			margin-bottom: 8px;
+			font-weight: 400;
+			font-size: 15px;
 		}
 
 		&__nav-link {
 			position: relative;
 			display: flex;
 			line-height: 1;
+			font-size: 18px;
+			font-weight: 700;
 			align-items: center;
-			margin-right: 40px;
+			color: @color-hover;
 			transition: color @transition;
 
 			&:not(.is-active)::before {
 				position: absolute;
 				content: '';
-				top: 24px;
+				bottom: -8px;
 				left: 0;
 				width: 100%;
 				height: 4px;
@@ -119,7 +156,7 @@
 		&__nav-link.is-active::after {
 			position: absolute;
 			content: "";
-			top: 24px;
+			bottom: -8px;
 			width: 100%;
 			height: 4px;
 			background-color: @color-brand;
@@ -138,10 +175,14 @@
 			display: block;
 		}
 
-		&__address-list,
 		&__nav {
 			display: flex;
 			align-items: center;
+		}
+
+		&__address-list {
+			display: flex;
+			flex-direction: column;
 		}
 
 		&__mobile-link {
@@ -149,27 +190,14 @@
 		}
 
 		&__address-link {
-			position: relative;
-			display: flex;
-			align-items: center;
-			line-height: 1;
+			display: block;
+			font-weight: 700;
+			font-size: 18px;
+			color: @color-hover;
 			transition: color @transition;
 
 			&:hover {
-				color: @color-hover;
-			}
-
-			&::after {
-				position: absolute;
-				display: block;
-				content: "";
-				top: 50%;
-				transform: translateY(-50%);
-				left: -12px;
-				width: 40px;
-				height: 40px;
-				border-radius: 50%;
-				background-color: @color-lightest;
+				color: @color-primary-light;
 			}
 		}
 
@@ -181,7 +209,12 @@
 
 		&__address-text {
 			max-width: 180px;
-			white-space: pre-wrap;
+			white-space: nowrap;
+		}
+
+		&__address-footnote {
+			font-size: 12px;
+			font-weight: 400;
 		}
 
 		&__menu {
