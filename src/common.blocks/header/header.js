@@ -1,6 +1,6 @@
 function setHeader() {
   const topPos = $('html').scrollTop();
-  if (topPos > 90) {
+  if (topPos > 350) {
     $('.header').addClass('is-moved');
   } else {
     $('.header').removeClass('is-moved');

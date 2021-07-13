@@ -88,13 +88,23 @@
 
 @media (min-width: @laptop) {
 	.header {
+		position: absolute;
+		transition: transform .3s ease-in-out;
+
 		&_moved {
 			box-shadow: none;
 		}
 
 		&.is-moved {
-			transform: translateY(-152px);
-			transition: transform .3s ease-in-out;
+			.header__top {
+				display: none;
+			}
+
+			position: fixed;
+			transform: translateY(54px);
+			top: -54px;
+			transition: transform .3s ease-in-out, position 0;
+
 		}
 
 		&__top {
