@@ -4,7 +4,7 @@
 	position: relative;
 	overflow: hidden;
 	padding: 120px 0 120px;
-	// min-height: 800px;
+	min-height: 840px;
 	display: none;
 
 	&::before {
@@ -44,7 +44,7 @@
 
 	&__tag {
 		text-align: center;
-		font-size: 12px;
+		font-size: 22px;
 		color: @text-white;
 		margin-bottom: 24px;
 		transition: color @transition;
@@ -76,8 +76,7 @@
 			background: #f9b766;
 			mix-blend-mode: lighten;
 			opacity: 0;
-			filter: blur(12px);
-			transition: opacity @bezier;
+			transition: opacity @bezier, filter @bezier;
 		}
 
 		&:hover {
@@ -86,6 +85,7 @@
 
 		&:hover:after {
 			opacity: 1;
+			filter: blur(12px);
 		}
 	}
 
@@ -94,6 +94,7 @@
 
 		&.is-active:after {
 			opacity: 1;
+			filter: blur(12px);
 		}
 	}
 
@@ -123,12 +124,13 @@
 		visibility: visible;
 		height: 100%;
 		opacity: 1;
-		
+
 		&::after {
 			transition: opacity .4s ease-in-out;
 			position: absolute;
 			content: "";
 			opacity: 1;
+			height: 100%;
 		}
 	}
 
@@ -140,36 +142,31 @@
 
 	.step-one {
 		&::after {
-			background: url("../../static/img/step_1.jpg") left center / 100% no-repeat,
-			radial-gradient(46.87% 50.1% at 49.95% 51.75%, rgba(1, 46, 59, 0) 0%, #012E3B 100%);
+			background: url("../../static/img/step_1.jpg") left center / 100% 100% no-repeat;
 		}
 	}
 
 	.step-two {
 		&::after {
-			background: url("../../static/img/step_2.jpg") left center / 100% no-repeat,
-			radial-gradient(46.87% 50.1% at 49.95% 51.75%, rgba(1, 46, 59, 0) 0%, #012E3B 100%);
+			background: url("../../static/img/step_2.jpg") left center / 100% 100% no-repeat;
 		}
 	}
 
 	.step-three {
 		&::after {
-			background: url("../../static/img/step_3.png") left center / 100% no-repeat,
-			radial-gradient(46.87% 50.1% at 49.95% 51.75%, rgba(1, 46, 59, 0) 0%, #012E3B 100%);
+			background: url("../../static/img/step_3.png") left center / 100% 100% no-repeat;
 		}
 	}
 
 	.step-four {
 		&::after {
-			background: url("../../static/img/step_4.jpg") left center / 100% no-repeat,
-			radial-gradient(46.87% 50.1% at 49.95% 51.75%, rgba(1, 46, 59, 0) 0%, #012E3B 100%);
+			background: url("../../static/img/step_4.jpg") left center / 100% 100% no-repeat;
 		}
 	}
 
 	.step-five {
 		&::after {
-			background: url("../../static/img/step_5.jpg") center center / 100% no-repeat,
-			radial-gradient(46.87% 50.1% at 49.95% 51.75%, rgba(1, 46, 59, 0) 0%, #012E3B 100%);
+			background: url("../../static/img/step_5.jpg") center center / 100% 100% no-repeat;
 		}
 	}
 
@@ -180,10 +177,22 @@
 	}
 
 	&__section-item {
+		position: relative;
 		color: @color-white;
 		font-weight: 600;
 		font-size: 18px;
-		padding-left: 24px;
+		padding-left: 20px;
+
+		&:before {
+			position: absolute;
+			content: '';
+			display: block;
+			background-color: @text-white;
+			width: 12px;
+			height: 2px;
+			left: 0;
+			top: 14px;
+		}
 	}
 
 	&__btn-item {

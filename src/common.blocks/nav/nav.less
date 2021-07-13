@@ -22,32 +22,36 @@
 	&__link {
     position: relative;
 		text-transform: uppercase;
-		font-size: 12px;
+		font-size: 13px;
 		display: block;
 		line-height: 1;
+		font-weight: 800;
+    margin-bottom: 8px;
 		padding: 16px 16px 16px 0;
 		transition: color @transition, background-color @transition;
-	}
-
-	&__link.is-active {
-    margin-bottom: 8px;
-
-    &::after {
-      position: absolute;
-      content: "";
-      left: -16px;
-      right: -16px;
-      top: 0;
-      width: 116%;
-      height: 100%;
-      z-index: -1;
-      background-color: @text-lightest;
-    }
-
-		.nav__svg {
-			transform: rotate(180deg);
+		
+		&.is-active {
+			font-size: 13px;
+			font-weight: 800;
+	
+			&::after {
+				position: absolute;
+				content: "";
+				left: -15px;
+				right: -15px;
+				top: 0;
+				width: 116%;
+				height: 100%;
+				z-index: -1;
+				background-color: @text-lightest;
+			}
+	
+			.nav__svg {
+				transform: rotate(180deg);
+			}
 		}
 	}
+
 
 	&__dropdown-link {
 		font-size: 13px;
@@ -111,15 +115,15 @@
 
 		&__list {
 			flex-direction: row;
-			position: relative;
 		}
-
+		
 		&__link {
 			cursor: pointer;
 			font-size: 12px;
 			display: block;
-			padding: 18px 16px;
+			padding: 22px 16px;
 			transition: color @transition;
+			margin-bottom: 0;
 
 			&_colored {
 				background-color: @color-brand;
@@ -133,6 +137,7 @@
 		&__link.on-page {
       margin-bottom: 0;
 			border-bottom: 2px solid @color-primary-light;
+			margin-bottom: -2px;
 			color: @color-hover;
 			border-color: @color-hover;
 
@@ -146,12 +151,14 @@
 		}
 
 		&__item {
+			position: relative;
+
 			&:hover {
 				.nav__dropdown {
 					max-height: 400px;
 					overflow-y: auto;
 					opacity: 1;
-					padding: 40px 32px 48px 32px;
+					padding: 24px;
 				}
 
 				.nav__dropdown-item {
@@ -184,14 +191,19 @@
 			grid-gap: 0 16px;
 			position: absolute;
 			z-index: 100;
-			top: 50px;
+			top: 56px;
 			left: 0;
-			right: 0;
 			max-height: 0;
 			opacity: 0;
       padding-left: 0;
 			background-color: @color-white;
+			box-shadow: 0.5px 3px 10px rgba(1, 46, 59, 0.1);
 			transition: opacity .2s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+			&_about {
+				left: auto;
+				right: 0;
+			}
 		}
 
 		&__dropdown.nav__dropdown_column {
@@ -201,7 +213,6 @@
 
 		&__dropdown-item {
 			display: none;
-
 			&:not(:last-child) {
 				margin-bottom: 0;
 			}
@@ -211,7 +222,7 @@
       color: @text-canvas;
 			font-weight: 600;
 			display: block;
-			width: 310px;
+			width: 290px;
 			padding: 16px 8px 16px 8px;
 			transition: background-color @transition;
 

@@ -9,4 +9,3 @@ if ($(window).width() < 1024) {
     slideItem.slideToggle(200);
   });
 }
-
