@@ -17,6 +17,10 @@
 
 	&__item {
 		margin-right: 8px;
+
+		@media (min-width: @desktop) {
+			margin-right: 24px;
+		}
 	}
 
 	&__link {
@@ -31,8 +35,8 @@
 		transition: color @transition, background-color @transition;
 		
 		&.is-active {
-			font-size: 13px;
-			font-weight: 800;
+			font-size: inherit;
+			font-weight: inherit;
 	
 			&::after {
 				position: absolute;
@@ -152,6 +156,7 @@
 
 		&__item {
 			position: relative;
+			white-space: nowrap;
 
 			&:hover {
 				.nav__dropdown {
