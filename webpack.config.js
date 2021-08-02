@@ -274,6 +274,10 @@ module.exports = {
       template: 'src/404.html',
       filename: '404.html',
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/search-results.html',
+      filename: 'search-results.html',
+    }),
     // для добавления отдельной html страницы нужно подключить новый HtmlWebpackPlugin
     /* new HtmlWebpackPlugin({
       template: 'src/test.html',

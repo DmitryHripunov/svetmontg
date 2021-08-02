@@ -1,0 +1,24 @@
+@import (reference) '../../less/variables.less';
+
+.search-results {
+	&__heading {
+		font-size: 15px;
+		font-weight: 400;
+		color: #4d4d4d;
+		margin-bottom: 32px;
+	}
+
+	&__item:not(:last-child) {
+		margin-bottom: 16px;
+	}
+
+	&__link {
+		color: @color-hover;
+    font-size: 15px;
+    font-weight: 400;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

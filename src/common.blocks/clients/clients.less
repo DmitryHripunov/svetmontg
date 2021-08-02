@@ -3,7 +3,8 @@
 .clients {
   &__list {
     display: flex;
-    overflow-y: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
   }
 
@@ -13,7 +14,7 @@
     margin-right: 16px;
     display: flex;
     flex: 1 0 auto;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 }
